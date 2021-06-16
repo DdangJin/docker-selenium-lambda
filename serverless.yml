@@ -4,6 +4,7 @@ provider:
   name: aws
   stage: ${opt:stage, 'prod'}
   region: ${opt:region}
+  lambdaHashingVersion: 20201221
   ecr:
     images:
       test:
@@ -14,4 +15,4 @@ functions:
     timeout: 60
     memorySize: 2048
     image:
-      name: test
+      name: autoCheck-docker
