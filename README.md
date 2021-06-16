@@ -10,14 +10,17 @@ This image goes with these versions.
 - chromedriver 2.43
 - selenium 3.141.0 (latest)
 
-### Running the demo
+### Running the auto check
 
 ```bash
-$ YOUR_REGION=ap-northeast-1 # your region
-$ git clone --depth 1 https://github.com/umihico/docker-selenium-lambda.git docker-selenium-lambda && cd $_
+$ sls login
+$ sls config credentials --provider aws --key ~ --secret ~
+$ YOUR_REGION=ap-northeast-2
 $ sls deploy --region $YOUR_REGION
-$ sls invoke -f server --region $YOUR_REGION
 ```
+
+아마도 별도로 aws 들어가서 trigger 추가해줘야할듯
+아니면 sls로 추가 가능한거 있는지 찾아보거나..
 
 ### Contribution
 
