@@ -7,8 +7,8 @@ RUN yum install -y unzip && \
 
 FROM public.ecr.aws/lambda/python:3.8
 RUN yum install -y https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
-RUN pip install selenium
+RUN pip install selenium bs4
 COPY --from=build /opt/headless-chromium /opt/
 COPY --from=build /opt/chromedriver /opt/
-COPY test.py ./
-CMD [ "test.handler" ]
+COPY autoCheck-docker.py ./
+CMD [ "autoCheck-docker.handler" ]
