@@ -1,0 +1,22 @@
+docker를 활용한 selenium lambda 환경 구성
+
+serverless framework를 통해서 aws lambda에 올림.
+
+nodejs 설치 및 npm을 통해 globally 키워드를 줘서 serverless 설치 후
+
+cli에서 아래 명령어 수행
+sls login
+sls config credentials --provider aws --key ~ --secret ~
+
+지금 이 경로 내로 이동 후에 아래 커맨드 수행
+
+$ YOUR_REGION=ap-northeast-2 # your region
+$ sls deploy --region $YOUR_REGION
+
+그 이벤트는 직접 추가해줘야 하는 듯?
+
+아래는 실행?
+$ sls invoke -f server --region $YOUR_REGION
+
+아래가 원본
+$ git clone --depth 1 https://github.com/umihico/docker-selenium-lambda.git docker-selenium-lambda && cd $_
